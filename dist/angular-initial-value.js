@@ -19,7 +19,7 @@ var initialValueModule = angular.module('initialValue', [])
       var getter, setter, val, tag, values;
       tag = $element[0].tagName.toLowerCase();
       val = $attrs.initialValue || removeIndent($element.val());
-      
+
       if(tag === 'input'){
         if($element.attr('type') === 'checkbox'){
           val = $element[0].checked;
@@ -39,7 +39,7 @@ var initialValueModule = angular.module('initialValue', [])
           if(option.hasAttribute('selected') && $element[0].hasAttribute('multiple')) {
             values.push(option.value);
           } else {
-            val = option.text;
+            val = option.value;
           }
         }
       }
