@@ -36,10 +36,12 @@ var initialValueModule = angular.module('initialValue', [])
         values = [];
         for (i=0; i < $element[0].options.length; i++) {
           option = $element[0].options[i];
-          if(option.hasAttribute('selected') && $element[0].hasAttribute('multiple')) {
-            values.push(option.value);
-          } else {
-            val = option.value;
+          if (option.hasAttribute('selected')) {
+             if ($element[0].hasAttribute('multiple')) {
+              values.push(option.value);
+            } else {
+              val = option.value;
+            }
           }
         }
       }
